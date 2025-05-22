@@ -1,0 +1,23 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "ruff.lint.args": [],
+    "ruff.format.args": []
+    // Optional: If you want to ensure VS Code uses the project's .venv
+    // "python.defaultInterpreterPath": ".venv/bin/python" 
+    // Note: VS Code's Python extension usually auto-detects .venv, 
+    // but explicitly setting it can be helpful in some cases.
+    // For now, let's rely on auto-detection, but be aware of this option.
+}
