@@ -1,102 +1,102 @@
 # Hello World Python Project
 
-## Description
+## 概要
 
-This project demonstrates a basic Python setup using `uv` for package management, `ruff` for linting and formatting, and `pytest` for testing. The main script prints a "hello world" message. This project serves as a template for modern Python development workflows.
+このプロジェクトは、パッケージ管理に`uv`、リンティングとフォーマットに`ruff`、テストに`pytest`を使用した基本的なPythonのセットアップを示しています。メインスクリプトは "hello world"メッセージを出力します。このプロジェクトは、最新のPython開発ワークフローのテンプレートとして機能します。
 
-## Prerequisites
+## 前提条件
 
--   **Python**: Python 3.12+ is recommended (this project was set up with Python 3.12).
--   **`uv`**: A fast Python package installer and resolver, written in Rust. If you don't have it, you can install it via pip: `pip install uv`.
+-   **Python**: Python 3.12+ を推奨します (このプロジェクトは Python 3.12 でセットアップされました)。
+-   **`uv`**: Rustで書かれた高速なPythonパッケージインストーラーおよびリゾルバーです。もし持っていなければ、pip経由でインストールできます: `pip install uv`。
 
-## Setup Instructions
+## セットアップ手順
 
-1.  **Clone the repository** (if you haven't already):
+1.  **リポジトリをクローンする** (まだの場合):
     ```bash
     git clone <repository-url>
     cd <repository-directory>
     ```
 
-2.  **Create/Activate Virtual Environment and Install Dependencies**:
+2.  **仮想環境の作成/有効化と依存関係のインストール**:
 
-    This project is configured to use `uv`. The virtual environment should ideally be created and managed by `uv`.
+    このプロジェクトは `uv` を使用するように設定されています。 virtual environment は理想的には `uv` によって作成および管理されるべきです。
 
     ```bash
-    # Create a virtual environment named .venv using Python 3.12 (if not already present)
-    # If you used `uv init` to start, this might have been done or a .python-version file created.
-    # To explicitly create or ensure it's set up with a specific Python version:
+    # Python 3.12 を使用して .venv という名前の virtual environment を作成します (まだ存在しない場合)
+    # `uv init` を使用して開始した場合、これは実行されているか、.python-version ファイルが作成されている可能性があります。
+    # 特定のPythonバージョンでセットアップされていることを明示的に作成または確認するには:
     uv venv .venv --python 3.12 
 
-    # Activate the virtual environment
-    # On macOS/Linux:
+    # virtual environment を有効化します
+    # macOS/Linux の場合:
     source .venv/bin/activate
-    # On Windows (Git Bash or WSL):
+    # Windows (Git Bash または WSL) の場合:
     # source .venv/Scripts/activate
-    # On Windows (Command Prompt):
+    # Windows (コマンドプロンプト) の場合:
     # .venv\Scripts\activate.bat
-    # On Windows (PowerShell):
+    # Windows (PowerShell) の場合:
     # .venv\Scripts\Activate.ps1
     ```
 
-    Once the virtual environment is activated, install the dependencies (including development tools like `pytest` and `ruff`) using `uv`:
+    virtual environment が有効化されたら、`uv` を使用して dependencies (開発ツールである `pytest` や `ruff` を含む) をインストールします:
 
     ```bash
-    # Install dependencies defined in pyproject.toml (including the 'dev' extras)
+    # pyproject.toml で定義された dependencies をインストールします ('dev' extras を含む)
     uv pip install .[dev]
     ```
-    This command installs all dependencies listed under `[project.dependencies]` and `[project.optional-dependencies.dev]` in the `pyproject.toml` file.
+    このコマンドは、`pyproject.toml` ファイルの `[project.dependencies]` および `[project.optional-dependencies.dev]` の下にリストされているすべての dependencies をインストールします。
 
-## How to Run the Code
+## コードの実行方法
 
-Ensure your virtual environment is activated.
+virtual environment が有効化されていることを確認してください。
 
-To run the main application:
+メインアプリケーションを実行するには:
 ```bash
 python main.py
 ```
-Or, to be explicit about using the virtual environment's Python interpreter:
+または、virtual environment の Python インタープリタを明示的に使用するには:
 ```bash
 .venv/bin/python main.py
 ```
-This will execute `main.py` and print "hello world" to the console.
+これにより `main.py` が実行され、コンソールに "hello world" と出力されます。
 
-## How to Run Tests
+## テストの実行方法
 
-Ensure your virtual environment is activated and development dependencies (like `pytest`) are installed.
+virtual environment が有効化され、development dependencies (例えば `pytest`) がインストールされていることを確認してください。
 
-To run the test suite:
+テストスイートを実行するには:
 ```bash
 pytest
 ```
-Or, explicitly using the virtual environment's Python interpreter to run `pytest` as a module:
+または、virtual environment の Python インタープリタを明示的に使用して `pytest` をモジュールとして実行するには:
 ```bash
 .venv/bin/python -m pytest
 ```
-This will discover and run all tests defined in the `tests` directory.
+これにより、`tests` ディレクトリに定義されているすべてのテストが検出され、実行されます。
 
-## How to Run Linter/Formatter
+## リンター/フォーマッターの実行方法
 
-Ensure your virtual environment is activated and development dependencies (like `ruff`) are installed.
+virtual environment が有効化され、development dependencies (例えば `ruff`) がインストールされていることを確認してください。
 
-**Check for linting issues:**
+**リンティングの問題を確認する:**
 ```bash
 ruff check .
 ```
-Or, explicitly:
+または、明示的に:
 ```bash
 .venv/bin/python -m ruff check .
 ```
 
-**Format files automatically:**
+**ファイルを自動的にフォーマットする:**
 ```bash
 ruff format .
 ```
-Or, explicitly:
+または、明示的に:
 ```bash
 .venv/bin/python -m ruff format .
 ```
-This will format your code according to the rules defined in `pyproject.toml` (under `[tool.ruff]`).
+これにより、`pyproject.toml`（`[tool.ruff]` の下）で定義されたルールに従ってコードがフォーマットされます。
 
 ---
 
-This README provides the essential steps to get the project running and to utilize the development tools integrated into it.
+このREADMEは、プロジェクトを起動し、統合された開発ツールを利用するための基本的な手順を提供します。
